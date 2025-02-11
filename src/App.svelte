@@ -32,7 +32,7 @@
     <img src="/logo_trans.png" alt="IEEE RAS Logo" class="logo">
     <h1 style="font-weight: 200; font-size: 2rem">Presents</h1>
     <img src="/hackathon_logo_trans.png" alt="Hackathon Logo" class="hackathon-logo">
-    <h1 style="font-weight: 200; font-size: 2.5rem">Launch In ...</h1>
+    <h1 class="launch-title">Launch In ...</h1>
     <div class="countdown">
       {countdown.hours}h  :  {countdown.minutes}m  :  {countdown.seconds}s
     </div>
@@ -61,7 +61,74 @@
       font-family: 'Rubik', sans-serif;
       overflow: hidden;
   }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    justify-content: flex-start;
+    min-height: calc(100vh - 80px);
+    text-align: center;
+    gap: 1rem;
+    padding-top: 2%;
+  }
 
+  .logo {
+    height: 100px;
+    margin: 0 0.5rem;
+  }
+
+  .hackathon-logo {
+    max-width: 350px;
+    animation: glitch 4s infinite;
+  }
+
+  h1 {
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 2.3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .launch-title {
+    font-weight: 200;
+    font-size: 2.5rem;
+  }
+
+  .countdown {
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 4rem;
+    color: #ffffff;
+    font-weight: 200;
+  }
+
+  @media (max-width: 600px) {
+    .content {
+      padding: 0;
+      gap: 0.5rem;
+    }
+
+    .countdown {
+      font-size: 2.5rem;
+    }
+
+    .logo {
+      height: 80px;
+    }
+
+    .hackathon-logo {
+      max-width: 250px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .launch-title {
+      font-size: 3rem;
+    }
+  }
   .logo {
     height: 100px;
     margin-right: auto;
@@ -73,34 +140,6 @@
     animation: glitch 4s infinite;
 
 }
-
-h1 {
-    font-family: 'Rubik Glitch', cursive;
-    font-size: 2.3rem;   /* Reduced from 2.5rem */
-    margin: 0;
-    padding: 0;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    justify-content: flex-start;  /* Changed from center to flex-start */
-    min-height: calc(100vh - 80px);
-    text-align: center;
-    gap: 1rem;
-    padding-top: 2%;  /* Add padding from the top to position the content higher */
-}
-
-  .countdown {
-    font-family: 'Rubik Glitch', cursive;
-    font-size: 4rem;
-    color: #ffffff;  /* Add padding from the top */  
-    font-weight: 200;
-  }
-
   @keyframes glitch {
     0% {
         filter: none;
