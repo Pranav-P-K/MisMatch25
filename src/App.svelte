@@ -72,6 +72,7 @@
     text-align: center;
     gap: 1rem;
     padding-top: 2%;
+    animation: glitch 4s infinite;
   }
 
   .logo {
@@ -81,7 +82,6 @@
 
   .hackathon-logo {
     max-width: 350px;
-    animation: glitch 4s infinite;
   }
 
   h1 {
@@ -107,6 +107,7 @@
     .content {
       padding: 0;
       gap: 0.5rem;
+      animation: glitch 4s infinite;
     }
 
     .countdown {
