@@ -6,7 +6,7 @@
   const targetAmount = 10000;
   
   onMount(() => {
-    let step = Math.ceil(targetAmount / 200);
+    let step = Math.ceil(targetAmount / 50);
     let interval = setInterval(() => {
       prizeAmount += step;
       if (prizeAmount >= targetAmount) {
@@ -28,7 +28,7 @@
     </h2>
     <div class="relative flex md:flex-row md:gap-4 flex-col items-center justify-center">
       <img src="/coins.png" class="w-27 text-purple-500" alt="controller" />
-      <p class="arcade-text text-center text-7xl text-[#fffb14]" transition:fade={{ duration: 2000 }}>
+      <p class="arcade-text text-center text-4xl md:text-5xl lg:text-7xl text-[#fffb14]" transition:fade={{ duration: 2000 }}>
         {prizeAmount.toLocaleString()}
       </p>
     </div>

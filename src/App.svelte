@@ -92,8 +92,7 @@
 }
 
   :global(body) {
-    margin: 0;
-    padding: 0;
+    overflow-x: hidden;
     color: white;
     font-family: "Rubik", sans-serif;
     background-image: linear-gradient(
