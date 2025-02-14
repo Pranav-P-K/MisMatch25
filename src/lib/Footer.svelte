@@ -7,7 +7,7 @@
       <!-- Logo & Description -->
       <div>
         <h2 class="text-2xl font-bold">MisMatch'25</h2>
-        <p class="text-gray-400 mt-2">One-Kind-Of Hackathon by the IEERAS Club of VITC!</p>
+        <p class="text-gray-400 mt-2">One-Kind-Of Hackathon by the IEEERAS Club of VITC!</p>
       </div>
       
       <!-- Quick Links -->

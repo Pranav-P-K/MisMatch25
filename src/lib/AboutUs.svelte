@@ -11,7 +11,7 @@
               </h2>
               <h3 class="text-xl md:text-2xl text-purple-300">Welcome to MISMATCH!</h3>
               <p class="text-purple-200/90 leading-relaxed max-w-2xl mx-auto">
-                  A one-of-a-kind hackathon hosted by the IEERAS Club of VIT Chennai!
+                  A one-of-a-kind hackathon hosted by the IEEERAS Club of VIT Chennai!
               </p>
               <div class="space-y-4 text-purple-200/80">
                   <p class="leading-relaxed max-w-2xl mx-auto">
@@ -35,7 +35,7 @@
                   <div class="absolute inset-0 bg-purple-600/30 rounded-xl blur-xl"></div>
                   <div class="relative bg-black/90 rounded-xl p-6 border-2 border-purple-500 hover:shadow-[0_0_20px_rgba(0,149,255,0.5)] transition-all duration-200">
                       <p class="text-center text-purple-200/90 leading-relaxed">
-                          The IEERAS Club at VIT Chennai is a community of tech enthusiasts, innovators, and problem-solvers.
+                          The IEEERAS Club at VIT Chennai is a community of tech enthusiasts, innovators, and problem-solvers.
                       </p>
                   </div>
               </div>
