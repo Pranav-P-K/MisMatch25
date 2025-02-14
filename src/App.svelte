@@ -92,7 +92,7 @@
 }
 
   :global(body) {
-    overflow-x: hidden;
+    
     color: white;
     font-family: "Rubik", sans-serif;
     background-image: linear-gradient(
@@ -144,6 +144,7 @@
 
   .hackathon-logo {
     max-width: 350px;
+    width: 100%;
   }
 
   h1 {
@@ -182,7 +183,8 @@
     }
 
     .hackathon-logo {
-      max-width: 250px;
+      max-width: 100px;
+      width: 100%;
     }
 
     h1 {
