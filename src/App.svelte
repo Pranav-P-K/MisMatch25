@@ -2,12 +2,12 @@
   import { onMount } from "svelte";
   import BackgroundParticles from "./BackgroundParticles.svelte";
   import AboutUs from "./lib/AboutUs.svelte";
-  import './app.css';
+  import "./app.css";
   import Tracks from "./lib/Tracks.svelte";
-    import Footer from "./lib/Footer.svelte";
+  import Footer from "./lib/Footer.svelte";
 
   let countdown = { hours: 66, minutes: 21, seconds: 17 };
-
+  const target = new Date("2025-02-14T17:30:00");
   function updateCountdown() {
     const now = new Date();
     const targetTime = new Date("2025-02-14T17:30:00");
@@ -18,10 +18,27 @@
     countdown = { hours, minutes, seconds };
   }
 
+  function updateRegisterCountdown() {
+    const now = new Date();
+    const registerTime = new Date("2025-03-01T12:00:00");
+    const timeDiff = registerTime.getTime() - now.getTime();
+    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    countdown = { hours, minutes, seconds };
+  }
+
   onMount(() => {
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
+    if (new Date() < target) {
+      updateCountdown();
+      const timer = setInterval(updateCountdown, 1000);
     return () => clearInterval(timer);
+    }
+    else {
+      updateRegisterCountdown();
+      const timer = setInterval(updateRegisterCountdown, 1000);
+    return () => clearInterval(timer);
+    }
   });
 </script>
 
@@ -36,21 +53,30 @@
 <main>
   <BackgroundParticles />
   <div class="content">
-    <img src="/logo_trans.png" alt="IEEE RAS Logo" class="logo" />
+    <img src="/logo.png" alt="IEEE RAS Logo" class="logo" />
     <h1 style="font-weight: 200; font-size: 2rem">Presents</h1>
     <img
       src="/hackathon_logo_trans.png"
       alt="Hackathon Logo"
       class="hackathon-logo"
     />
-    <h1 class="launch-title">Launch In ...</h1>
-    <div class="countdown">
-      {countdown.hours}h : {countdown.minutes}m : {countdown.seconds}s
-    </div>
-    <AboutUs />
+    {#if new Date() < target}
+      <h1 class="launch-title">Launch In ...</h1>
+      <div class="countdown">
+        {countdown.hours}h : {countdown.minutes}m : {countdown.seconds}s
+      </div>
+    {:else}
+      <h1 class="launch-title">Register In ...</h1>
+      <div class="countdown">
+        {countdown.hours}h : {countdown.minutes}m : {countdown.seconds}s
+      </div>
+    {/if}
   </div>
-  <Tracks/>
-  <Footer/>
+  {#if new Date() > target}
+    <AboutUs />
+    <Tracks />
+    <Footer />
+  {/if}
 </main>
 
 <style>
@@ -91,6 +117,8 @@
     overflow-x: hidden; /* Prevent horizontal scroll if needed */
   }
   .content {
+    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
