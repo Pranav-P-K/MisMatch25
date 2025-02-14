@@ -1,13 +1,10 @@
-
 <script lang="ts">
-    //import { onMount } from 'svelte';
+	import { onMount } from "svelte";
 	import trackPage from "../assets/trackPage.png";
-	import background from "../assets/background.png";
-	import bubbles from "../assets/bubbles.png";
 	import tracks from "../assets/tracks.png";
+	import background from "../assets/background.png";
 
 	let slideIndex = 0;
-	let expanded = false;
 	let titles = ["FinTech", "Web3", "DevTools", "OpenINO"];
 	let texts = [
 		"Financial technology is transforming the way we manage, invest, and transact money through innovative solutions like digital banking, blockchain, and AI-driven financial services.",
@@ -17,18 +14,20 @@
 	];
 	function plusDivs(n: number) {
 		slideIndex = (slideIndex + n + titles.length) % titles.length;
-		expanded = false;
 	}
-	function toggleExpand() {
-        expanded = !expanded;
-    }
+
+	onMount(() => {
+		setInterval(() => {
+			slideIndex = (slideIndex + 1) % titles.length;
+		}, 10000);
+	});
 </script>
 
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com"  />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
 		rel="stylesheet"
@@ -36,90 +35,89 @@
 </svelte:head>
 
 <section>
-	<div class="container">
-		<img src={background} alt="Welcome" class="bg" />
-		<div class="welcome">
-			<img src={tracks} alt="Welcome" class="trackimg" />
-			<div class="trackSliderContainer">
-				<img src={trackPage} alt="Track Page" class="trackPage" />
-				<div class="trackSlider">
-					<div class="tracks">
-						<div class="content">
-							{#each titles as title, index}
-								<div class:hidden={index !== slideIndex}>
-									<h1 class="title">{title}</h1>
-									<p class:text-expanded={expanded} class="text">{expanded ? texts[index] : texts[index].slice(0, 100) + '...'}</p>
-								</div>
-							{/each}
-						</div>
-						<div class="controlbtn">
-							<div class="ctrlsec">
-								<button
-									class="prev glow-button"
-									on:click={() => plusDivs(-1)}>Back</button
-								>
-								<button
-									class="next glow-button"
-									on:click={() => plusDivs(1)}>Next</button
-								>
-								<button class="know glow-button" on:click={toggleExpand}>{expanded ? "Show Less" : "Know More"}</button>
+	<div class="welcome">
+		<img src={tracks} alt="Welcome" class="trackimg" />
+		<div class="trackSliderContainer">
+			<img src={trackPage} alt="Track Page" class="trackPage" />
+			<div class="trackSlider">
+				<div class="tracks">
+					<div class="content">
+						{#each titles as title, index}
+							<div class:hidden={index !== slideIndex}>
+								<h1 class="title">{title}</h1>
+								<p class="text">{texts[index]}</p>
 							</div>
+						{/each}
+					</div>
+					<div class="controlbtn">
+						<div class="ctrlsec">
+							<button
+								class="prev glow-button"
+								on:click={() => plusDivs(-1)}>Prev</button
+							>
+							<button
+								class="next glow-button"
+								on:click={() => plusDivs(1)}>Next</button
+							>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="track-bg">
+			<img src={background} alt="track-bg">
+		</div>
 	</div>
 </section>
 
 <style>
-	
-	.container {
-        margin: 0;
-		
-		z-index: 0;
+	section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		margin: 5rem 0;
+		padding: 0 1rem;
+	}
+
+	.welcome {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		min-height: 100ch;
-		overflow: hidden;
+		gap: 5rem;
+		width: 100%;
+		max-width: 1200px;
+		flex-wrap: wrap;
 	}
-	.bg {
-		position: absolute;
+
+	.track-bg {
 		z-index: -1;
-		height: 100%;
+		position: absolute;
 	}
-	
-	.welcome {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: relative;
-		z-index: 1;
-	}
+
 	.trackimg {
 		position: relative;
-		padding-right: 150px;
-	}
-	.welcome img {
-		width: 500px;
+		width: 100%;
+		max-width: 500px;
+		height: auto;
 	}
 
 	.trackSliderContainer {
 		padding: auto;
 		position: relative;
 		transition: transform 0.4s ease-in-out;
-		transform: scale(1.4);
+		width: 100%;
+		max-width: 500px;
 	}
 
 	.trackSliderContainer:hover {
-		transform: scale(2);
-		overflow: hidden;
+		transform: scale(1.3);
 	}
 
 	.trackPage {
 		width: 100%;
+		height: auto;
 		position: relative;
 		z-index: 0;
 	}
@@ -139,7 +137,7 @@
 	.content {
 		position: absolute;
 		top: 36%;
-		left: 30%;
+		left: 32%;
 		text-align: left;
 		color: #81f7ff;
 		font-family: "Press Start 2P", cursive;
@@ -147,134 +145,134 @@
 	}
 
 	.title {
-		padding-top: 5px;
 		letter-spacing: 1px;
-		font-size: 1rem;
+		font-size: 1.2rem;
 		color: white;
-		margin-bottom: 9px;
+		margin-bottom: 10px;
 	}
 
 	.text {
-        padding-left: 9px;
-        font-size: 0.55rem;
-        line-height: 1.5;
-        overflow: hidden;
-        scrollbar-width: none;
-        height: 80px;
+		padding-left: 15px;
+		font-size: 0.6rem;
+		line-height: 1.5;
+		overflow: auto;
+		scrollbar-width: none;
+		height: 90px;
+	}
 
-    }
-    .text-expanded {
-        white-space: normal;
-        overflow-y: auto;
-        max-height: 200px;
-    }
 	.hidden {
 		display: none;
 	}
 
 	.glow-button {
+		background-color: #260b24;
+		border: 3px solid #f99fd9;
+		color: #f9bae3;
 		width: 115px;
 		height: 55px;
+		font-size: 17px;
 		font-weight: bold;
 		cursor: pointer;
+		transition: 0.3s;
+		border-radius: 15px;
+		box-shadow:
+			0 0 15px #900a54,
+			0 0 20px #900a54 inset;
+		text-transform: uppercase;
+		letter-spacing: 2px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: relative;
 		font-family: "Press Start 2P", serif;
-		transition: transform 0.1s ease-in-out;
 	}
 
 	.glow-button:hover {
-		transition: transform 0.1s ease-in-out;
+		box-shadow:
+			0 0 25px #ff00ff,
+			0 0 20px #ff007f inset;
 		transform: scale(1.1);
 	}
 
 	.prev {
-		color:red;
 		position: absolute;
-		top: 34%;
-		right: 24%;
-		font-size: 8px;
+		bottom: 7%;
+		left: 18%;
 	}
+
 	.next {
-		background: -webkit-linear-gradient(#FFECAD, #FFDD00);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
 		position: absolute;
-		top: 54%;
-		right: 24%;
-		font-size: 9px;
+		bottom: 7%;
+		right: 18%;
 	}
-	.know{
-		background: -webkit-linear-gradient(#FF85DA, #FF057C);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		position: absolute;
-		top: 54%;
-		left: 26%;
-		font-size: 9px;
-	}
-	@media (max-width: 768px) {
-		.container{
-			max-height: 458px;
-		}
+
+	/* Media Queries */
+	@media (max-width: 1024px) {
 		.welcome {
-			flex-direction: column;
+			gap: 2rem;
 		}
-		.welcome img {
-			width: 400px;
-		}
+
 		.content {
-			top: 34%;
-			left: 30%;
-			width: 120px;
+			width: 160px;
 		}
+
 		.title {
-			letter-spacing: 1px;
-			font-size: 0.6rem;
-			color: white;
-			margin-bottom: 5px;
+			font-size: 1rem;
 		}
 
 		.text {
-			padding-left: 10px;
-			font-size: 0.39rem;
-			line-height: 1.5;
-			overflow: auto;
-			scrollbar-width: none;
-			height: 50px;
-		}
-		.trackSliderContainer:hover {
-			transform: scale(1.4);
-			overflow: hidden;
+			font-size: 0.5rem;
+			height: 80px;
 		}
 
 		.glow-button {
-			width: 95px;
+			width: 100px;
 			height: 45px;
+			font-size: 14px;
+		}
+	}
 
+	@media (max-width: 768px) {
+		.welcome {
+			flex-direction: column;
+			gap: 3rem;
 		}
-		.trackimg {
-			margin-bottom: 50px;
-			padding-right: 50px;
+
+		.trackSliderContainer:hover {
+			transform: scale(1.05);
 		}
-		.prev{
-			top: 31%;
-			right: 19%;
-			font-size: 5px;
+
+		.glow-button {
+			width: 90px;
+			height: 40px;
+			font-size: 12px;
 		}
-		.next{
-			top: 53%;
-			right: 22%;
-			font-size: 6px;
+	}
+
+	@media (max-width: 480px) {
+		section {
+			margin: 1rem 0;
 		}
-		.know{
-			top: 53%;
-			left: 24%;
-			font-size: 6px;
+
+		.content {
+			width: 140px;
+		}
+
+		.title {
+			font-size: 0.8rem;
+		}
+
+		.text {
+			font-size: 0.4rem;
+			height: 70px;
+			padding-left: 10px;
+		}
+
+		.glow-button {
+			width: 80px;
+			height: 35px;
+			font-size: 10px;
+			letter-spacing: 1px;
 		}
 	}
 </style>
