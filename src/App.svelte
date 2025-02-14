@@ -85,6 +85,10 @@
     position: relative;
   }
 
+  main::-webkit-scrollbar {
+  display: none;
+}
+
   :global(body) {
     margin: 0;
     padding: 0;
