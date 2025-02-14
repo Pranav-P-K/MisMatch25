@@ -38,7 +38,6 @@
 <section>
 	<div class="container">
 		<img src={background} alt="Welcome" class="bg" />
-		
 		<div class="welcome">
 			<img src={tracks} alt="Welcome" class="trackimg" />
 			<div class="trackSliderContainer">
