@@ -6,7 +6,7 @@
 
   function updateCountdown() {
     const now = new Date();
-    const targetTime = new Date('2025-02-14T12:00:00');
+    const targetTime = new Date('2025-02-14T17:30:00');
     const timeDiff = targetTime.getTime() - now.getTime();
     const hours = Math.floor(timeDiff / (1000 * 60 * 60));
     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
