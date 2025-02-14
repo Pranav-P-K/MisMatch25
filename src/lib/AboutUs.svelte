@@ -84,8 +84,8 @@
               <p class="text-center text-purple-200/90 leading-relaxed">
                 At VIT Chennai, a premier <br/> institute known for <br/> excellence in education and <br/> research, we aim to provide a <br/>platform for bright minds to<br/>shine.
               </p>
-              <div class="absolute -bottom-6 -right-6">
-                <img src="/Controller.png" class="w-12 h-12 text-purple-500 transform rotate-12" alt="controller" />
+              <div class="absolute -bottom-6 -right-12">
+                <img src="/Controller.png" class="w-32 h-22 text-purple-500 transform rotate-12" alt="controller" />
               </div>
             </div>
           </div>

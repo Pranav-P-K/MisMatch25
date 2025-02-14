@@ -41,7 +41,7 @@
       alt="Hackathon Logo"
       class="hackathon-logo"
     />
-    <h1 class="launch-title">Launch In ...</h1>
+    <h1 class="launch-title">Registration Opens In ...</h1>
     <div class="countdown">
       {countdown.hours}h : {countdown.minutes}m : {countdown.seconds}s
     </div>
