@@ -2,7 +2,8 @@
   import { onMount } from "svelte";
   import BackgroundParticles from "./BackgroundParticles.svelte";
   import AboutUs from "./lib/AboutUs.svelte";
-  import './app.css'
+  import './app.css';
+  import Tracks from "./lib/Tracks.svelte";
 
   let countdown = { hours: 66, minutes: 21, seconds: 17 };
 
@@ -47,6 +48,7 @@
     </div>
     <AboutUs />
   </div>
+  <Tracks/>
 </main>
 
 <style>
