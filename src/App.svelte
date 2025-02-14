@@ -5,6 +5,7 @@
   import "./app.css";
   import Tracks from "./lib/Tracks.svelte";
   import Footer from "./lib/Footer.svelte";
+  import PrizePool from "./lib/PrizePool.svelte";
 
   let countdown = { hours: 66, minutes: 21, seconds: 17 };
   const target = new Date("2025-02-14T17:30:00");

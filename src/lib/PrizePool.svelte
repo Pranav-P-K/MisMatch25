@@ -11,7 +11,8 @@
     <h2 class="arcade-text mb-6 text-center text-2xl text-[#04d1d1]">
       Prize Pool
     </h2>
-    <div class="relative">
+    <div class="relative flex md:flex-row md:gap-4 flex-col items-center justify-center">
+      <img src="/coins.png" class="w-27 text-purple-500" alt="controller" />
       <p class="arcade-text text-center text-xl text-[#FF1493]">
           It's a Surprise!<br>
           <br>
