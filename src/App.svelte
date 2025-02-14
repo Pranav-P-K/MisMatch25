@@ -4,6 +4,7 @@
   import AboutUs from "./lib/AboutUs.svelte";
   import './app.css';
   import Tracks from "./lib/Tracks.svelte";
+    import Footer from "./lib/Footer.svelte";
 
   let countdown = { hours: 66, minutes: 21, seconds: 17 };
 
@@ -49,6 +50,7 @@
     <AboutUs />
   </div>
   <Tracks/>
+  <Footer/>
 </main>
 
 <style>

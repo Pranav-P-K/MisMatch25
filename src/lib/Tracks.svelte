@@ -90,12 +90,7 @@
 		z-index: -1;
 		height: 100%;
 	}
-	.bubbles {
-		right: 0%;
-		position: absolute;
-		z-index: -2;
-		height: 100%;
-	}
+	
 	.welcome {
 		display: flex;
 		justify-content: space-between;
@@ -204,6 +199,7 @@
 	}
 	.next {
 		background: -webkit-linear-gradient(#FFECAD, #FFDD00);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		position: absolute;
@@ -213,6 +209,7 @@
 	}
 	.know{
 		background: -webkit-linear-gradient(#FF85DA, #FF057C);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		position: absolute;
