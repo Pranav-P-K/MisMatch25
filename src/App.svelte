@@ -129,7 +129,6 @@
     position: relative;
     z-index: 2;
     justify-content: center; /* Center vertically */
-    min-height: calc(100vh - 80px);
     text-align: center;
     gap: 1rem;
     padding-top: 2%;
