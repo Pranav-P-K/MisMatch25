@@ -24,7 +24,6 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
