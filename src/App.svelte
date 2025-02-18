@@ -45,7 +45,7 @@
 <svelte:head>
   <title>MisMatch'25</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&family=Rubik+Glitch&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@200;500&family=Rubik+Glitch&display=swap"
     rel="stylesheet"
   />
 </svelte:head>
@@ -66,10 +66,7 @@
         {countdown.hours}h : {countdown.minutes}m : {countdown.seconds}s
       </div>
     {:else}
-      <h1 class="launch-title">Register In ...</h1>
-      <div class="countdown">
-        {countdown.hours}h : {countdown.minutes}m : {countdown.seconds}s
-      </div>
+      <h1 class="launch-title">Registrations Starting Soon!</h1>
     {/if}
   </div>
   {#if new Date() > target}
@@ -122,7 +119,6 @@
   }
   .content {
     min-height: 100vh;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
