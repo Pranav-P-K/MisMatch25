@@ -5,6 +5,8 @@
   import "./app.css";
   import Tracks from "./lib/Tracks.svelte";
   import Footer from "./lib/Footer.svelte";
+  import PrizePool from "./lib/PrizePool.svelte";
+    import Faq from "./lib/FAQ.svelte";
 
   let countdown = { hours: 66, minutes: 21, seconds: 17 };
   const target = new Date("2025-02-14T17:30:00");
@@ -71,8 +73,11 @@
   </div>
   {#if new Date() > target}
     <AboutUs />
+    <PrizePool/>
     <Tracks />
+    <Faq/>
     <Footer />
+
   {/if}
 </main>
 
@@ -87,8 +92,7 @@
 }
 
   :global(body) {
-    margin: 0;
-    padding: 0;
+    
     color: white;
     font-family: "Rubik", sans-serif;
     background-image: linear-gradient(
@@ -139,6 +143,7 @@
 
   .hackathon-logo {
     max-width: 350px;
+    width: 100%;
   }
 
   h1 {
@@ -177,7 +182,8 @@
     }
 
     .hackathon-logo {
-      max-width: 250px;
+      max-width: 100px;
+      width: 100%;
     }
 
     h1 {

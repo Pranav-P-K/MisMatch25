@@ -7,7 +7,7 @@
       <!-- Logo & Description -->
       <div>
         <h2 class="text-2xl font-bold">MisMatch'25</h2>
-        <p class="text-gray-400 mt-2">One-Kind-Of Hackathon by the IEERAS Club of VITC!</p>
+        <p class="text-gray-400 mt-2">One-Kind-Of Hackathon by the IEEERAS Club of VITC!</p>
       </div>
       
       <!-- Quick Links -->
@@ -23,7 +23,7 @@
       <div>
         <h3 class="font-bold text-lg">Follow Us</h3>
         <div class="flex space-x-8 mt-2">
-      <a href="#" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-twitter"></i></a>
           <a href="#" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-instagram"></i></a>
           <a href="#" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-linkedin"></i></a>
         </div>
