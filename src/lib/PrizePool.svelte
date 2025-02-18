@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </svelte:head>
 
-<div class="relative mx-auto max-w-3xl p-6 mt-32 mb-16">
+<div id="prize" class="relative mx-auto max-w-3xl p-6 mt-32 mb-16">
   <div class="rounded-lg border border-purple-500 bg-black/90 p-8 shadow-[0_0_20px_rgba(0,149,255,0.5)] backdrop-blur-sm">
     <h2 class="arcade-text mb-6 text-center text-2xl text-[#04d1d1]">
       Prize Pool

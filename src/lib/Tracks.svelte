@@ -34,7 +34,7 @@
 	/>
 </svelte:head>
 
-<section>
+<section id="tracks">
 	<div class="welcome">
 		<img src={tracks} alt="Welcome" class="trackimg" />
 		<div class="trackSliderContainer">

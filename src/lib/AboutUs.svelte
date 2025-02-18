@@ -2,7 +2,7 @@
   import '../app.css';
 </script>
 
-<div class="min-h-screen text-white p-6 font-sans flex flex-col justify-center items-center">
+<div id="about" class="min-h-screen text-white p-6 font-sans flex flex-col justify-center items-center">
   <div class="w-full max-w-4xl mx-auto mb-12 px-4">
       <div class="relative bg-black rounded-lg p-8 border-2 border-blue-500 shadow-[0_0_30px_rgba(0,149,255,0.5)] hover:shadow-[0_0_50px_rgba(0,149,255,0.5)] transition-all duration-200">
           <div class="text-center space-y-6">

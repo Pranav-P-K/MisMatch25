@@ -13,10 +13,10 @@
       <!-- Quick Links -->
       <div class="flex flex-col space-y-2">
         <h3 class="font-semibold text-lg">Quick Links</h3>
-        <a href="#" class="text-gray-400 hover:text-white">Home</a>
-        <a href="#" class="text-gray-400 hover:text-white">About</a>
-        <a href="#" class="text-gray-400 hover:text-white">PrizePool</a>
-        <a href="#" class="text-gray-400 hover:text-white">Tracks</a>
+        <a href="/" class="text-gray-400 hover:text-white">Home</a>
+        <a href="#about" class="text-gray-400 hover:text-white">About</a>
+        <a href="#prize" class="text-gray-400 hover:text-white">PrizePool</a>
+        <a href="#tracks" class="text-gray-400 hover:text-white">Tracks</a>
       </div>
       
       <!-- Social Media Links -->
