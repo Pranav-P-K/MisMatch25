@@ -23,9 +23,8 @@
       <div>
         <h3 class="font-bold text-lg">Follow Us</h3>
         <div class="flex space-x-8 mt-2">
-          <a href="#" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/ieeerasvitc/" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/ieeeras-vitc" class="text-gray-400 hover:text-white text-4xl"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
